@@ -1,0 +1,123 @@
+// Copyright 2025 Schaeffler Monitoring Services GmbH
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
+// documentation files(the “Software”), to deal in the Software without restriction, including without limitation the 
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and /or sell copies of the Software, and to 
+// permit persons to whom the Software is furnished to do so, subject to the following conditions :
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the 
+// Software.
+//
+// THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE 
+// WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE AUTHORS OR 
+// COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+syntax = "proto3";
+
+option optimize_for = LITE_RUNTIME;
+
+package smartcheck;
+import "JobConfig.proto";
+
+
+enum AlarmStateEnum {
+		ALARM_STATE_UNKNOWN = 0;
+		ALARM_STATE_NO_ALARM = 1;
+		ALARM_STATE_PRE_ALARM = 2;
+		ALARM_STATE_MAIN_ALARM = 3;
+		ALARM_STATE_CHAR_VAL_ERROR = 4;
+}
+
+message SubCharacteristicValueData {
+	message NumericalValues {
+		double		     value = 1;
+		// The numerical value of the characteristic value
+		
+		
+	    AlarmStateEnum 	 alarm_state = 100;
+	    // The alarm status of the characteristic value
+	    
+	    int64            alarm_state_since = 101;
+		// Timestamp of last alarm state change in us from 1.1.1970 UTC
+		 
+	    uint32	 	     alarm_index = 102;
+		// The index within the alarm map, in case a config with an alarm map is used, otherwise 0
+		
+		
+		double		     lower_main_alarm = 200;
+		// A value below this border will lead to a main alarm
+		
+		double		     lower_pre_alarm = 201;
+		// A value below this border, but greater than or equal to  lower_main_alarm will lead to a pre alarm
+		
+		double		     upper_pre_alarm = 202;
+		// A value above this border, but lower than or equal to upper_main_alarm will lead to a pre alarm
+		
+		double		     upper_main_alarm = 203;
+		// A value above this border will lead to a main alarm
+		
+		bool             learning_mode = 250;
+		// Specifies whether the learning mode is enabled for the kpi
+
+		bytes unit_uuid = 300;
+	    // The unit uuid of the characteristic value 
+	    string unit_name = 301;
+		// The unit of the characteristic value as a string
+	}
+
+	bytes            characteristic_value_config_current_uuid = 1;
+	// the unique id of the characteristic value configuration on the device
+		
+    NumericalValues  numerical_values = 100;
+    // The numerial values of the characteristic value
+    
+    repeated bytes 		timesignal_uuid = 200;
+    // The timesignals, the characteristic value is based on
+    
+    bytes timesignal_unit_uuid = 300; 
+    // The unit uuid of the timesignal 
+	string timesignal_unit_name = 301;
+	// The unit of the timesignal as a string 
+	SignalType signal_type = 302;
+	// The type of the timesignal
+}
+
+message CharacteristicValueData {
+	bytes            characteristic_value_config_current_uuid = 1;
+	// the unique id of the characteristic value configuration on the device
+	
+	int64 timestamp = 2;
+	// Measurement timestamp in us from 1.1.1970 UTC 
+	
+	AlarmStateEnum 	 alarm_state = 100;
+	// The alarm status of the characteristic value
+	
+	int64 alarm_state_since = 101;
+	// Timestamp of last alarm state change in us from 1.1.1970 UTC 
+	
+	repeated SubCharacteristicValueData sub_characteristic_values = 300;
+	// Sub-Kpis from which this compound characteristic value is calculated (e.g. roller bearing characteristic value is calculated from inner race, outer race, cage ...)  
+}
+
+
+
+message JobData {
+	bytes job_data_uuid = 1;
+    // Unique identifier of this job data set.
+    
+	bytes job_config_current_uuid = 2;
+    // Unique identifier of the job measurement configuration
+	
+	int64 timestamp = 3;
+	// Measurement timestamp in us from 1.1.1970 UTC 
+	
+	AlarmStateEnum 	alarm_state = 100;
+	// The alarm state of the job
+	
+	int64 alarm_state_since = 101;
+	// Timestamp of last alarm state change in us from 1.1.1970 UTC 
+	
+	repeated CharacteristicValueData characteristic_values = 200;
+	// Calculated kpis
+}

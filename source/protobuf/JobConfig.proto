@@ -1,0 +1,475 @@
+// Copyright 2025 Schaeffler Monitoring Services GmbH
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
+// documentation files(the “Software”), to deal in the Software without restriction, including without limitation the 
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and /or sell copies of the Software, and to 
+// permit persons to whom the Software is furnished to do so, subject to the following conditions :
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the 
+// Software.
+//
+// THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE 
+// WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE AUTHORS OR 
+// COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+syntax = "proto3";
+
+option optimize_for = LITE_RUNTIME;
+package smartcheck;
+
+message FrequencyBand {
+	bool absolute = 3;
+	double bottom_frequency = 1;
+	double top_frequency = 2;
+}
+
+enum CalculationTypeEnum {
+	Unknown = 0;
+	CalculatedCharacteristicValue = 1;
+	TimeSignalRms = 2;
+	SpectralRms = 3;
+	DC = 4;
+	Peak = 5;
+	Peak2Peak = 6;
+	Crestfactor = 7;
+	WellhausenCounts = 8;
+	PeriodicValue = 9;
+	CarpetLevel = 10;
+	ISO10816 = 11;
+	VDI3836 = 12;
+	ConditionGuard = 13;
+	RainflowCount = 14;
+	LoadDurationDistribution = 15;
+	Trigger = 16;
+	Validator = 17;
+	ChannelMonitor = 18;
+	OilTemperatureMonitor = 19;
+	OilLifetimeEstimate = 20;
+	OilTemperatureOverrun = 21;
+	OilThetaEquivalent = 22;
+	OilTotalUsageTime = 23;
+	HourMeter = 24;
+	SignedPeak = 25;
+	Kurtosis = 26;
+	TimeSignalRmsWithoutDC = 27;
+}
+
+enum TriggerValidatorChannelMonitorCalculationTypeEnum {
+	TVC_Unknown = 0;
+	TVC_Crest = 1;
+	TVC_DC = 2;
+	TVC_Peak = 3;
+	TVC_Peak2Peak = 4;
+	TVC_RMS=5;
+	TVC_SignedPeak = 6;
+}
+
+message BaseMeasurementParameter {
+	double maximum_speed = 1; // hz
+}
+
+message BeltDriveParameter {
+	double belt_length = 1;
+	double driving_pulley_diameter = 2;
+	double driven_pulley_diameter = 3;
+	double maximum_speed = 4; // hz
+}
+
+message ConditionGuardParameter {
+}
+
+message CouplingParameter {
+	int32 number_of_bolts = 1;
+	double maximum_speed = 2; // hz
+}
+
+message DefaultMeasurementParameter {
+	double maximum_speed = 1; // hz
+}
+
+message FanParameter {
+	int32 number_of_blades = 1;
+	double maximum_speed = 2; // hz
+}
+
+message GearStageParameter {
+	int32 number_of_teeth_driving_wheel = 1;
+	int32 number_of_teeth_driven_wheel = 2;
+	double maximum_speed = 3;
+	string name = 4;
+	double rotational_speed_ratio = 5;
+    bool rotational_speed_ratio_in_hz = 6;
+}
+
+message JournalBearingParameter {
+	double maximum_speed = 1; // hz
+}
+
+message LddDimensionParameter {
+	int32 number_of_fields = 1;
+	double lower_border = 2;
+	double upper_border = 3;
+	bytes unit_uuid = 4;
+	string unit_name = 5;
+	bytes input_channel = 20;
+}
+
+message LoadDurationDistributionParameter {
+	int64 from_date = 1;
+	int64 to_date = 2;
+	string comment = 3;
+	repeated LddDimensionParameter dimension = 100;
+}
+
+message ChannelMonitorCharacteristicValueParameter {
+	TriggerValidatorChannelMonitorCalculationTypeEnum calculation_type = 1;
+	int32 calculation_time = 2;
+	int32 signal_length = 3;
+	int32 lead_time = 4;
+	bytes input_channel = 20;
+}
+
+message ChannelMonitorParameter {
+	repeated ChannelMonitorCharacteristicValueParameter channel_monitors = 1;
+}
+
+message ProcessSignalMonitorCharacteristicValueParameter {
+	CalculationTypeEnum calculation_type = 1;
+	bytes input_channel = 20;
+}
+
+message ProcessSignalMonitorParameter {
+	int32 signal_length = 1;
+	repeated ProcessSignalMonitorCharacteristicValueParameter process_signal_monitors = 2;
+}
+
+message TorqueCorrectionParameter {
+	LddDimensionParameter torque_channel = 1;
+	double nominal_torque = 2;
+	double slope = 3;
+	double offset = 4;
+}
+
+message OilStatusParameter {
+	bytes oil_type = 1;
+	string oil_name = 2;
+	int32 runtime_correction = 3;
+	int32 overlap = 4;
+	int64 last_oil_change = 5;
+	double previous_theta_equiv = 6;
+
+	
+	LddDimensionParameter oil_temperature_channel_parameter = 10;
+	TorqueCorrectionParameter torque_correction_parameter = 20;	
+}
+
+message PumpParameter {
+	int32 number_of_pump_vanes = 1;
+	double maximum_speed = 2; // hz
+}
+
+message RainflowCountParameter {
+	int32 number_of_fields = 1;
+	double lower_border = 2;
+	double upper_border = 3;
+	double hysteresis = 4;
+	bytes unit_uuid = 5;
+	string unit_name = 6;
+	string comment = 7;
+	int64 from_date = 8;
+	int64 to_date = 9;
+	
+	bytes input_channel = 20;
+}
+
+message RollerBearingParameter {
+	bytes bearing_uuid = 1;
+	string bearing_name = 2;
+	double ball_pass_frequency_inner_race = 3;
+	double ball_pass_frequency_outer_race = 4;
+	double ball_spin_frequency = 5;
+	double fundamental_train_frequency = 6;
+	bool fixed_outer_race = 7;
+	bool fixed_inner_race = 8;
+	double maximum_speed = 9; // hz
+	bytes bearing_manufacturer_uuid = 10;
+	string bearing_manufacturer_name = 11;
+	double rotational_speed_ratio = 12;
+    bool rotational_speed_ratio_in_hz = 13;
+}
+
+
+message SchaefflerCloudParameter {
+	bytes vibration_channel=1;
+	bytes temperature_channel=2;
+	bytes speed_channel=3;
+	double maximum_speed = 4; // hz
+
+	repeated RollerBearingParameter roller_bearings = 20;	
+	repeated GearStageParameter gear_stages = 21;
+}
+
+message MachineAnalysisEssentialsParameter {
+	bytes vibration_channel=1;
+	bytes temperature_channel=2;
+	bytes load_channel=3;
+	bytes speed_channel=4;
+	double maximum_speed = 5; // hz
+
+	repeated RollerBearingParameter roller_bearings = 20;	
+	repeated GearStageParameter gear_stages = 21;	
+}
+
+
+message ShaftParameter {
+	double maximum_speed = 1; // hz
+}
+
+message TrackedFrequencyBandsParameter {
+	double maximum_speed = 1; // hz
+	repeated FrequencyBand frequency_bands = 2;
+}
+
+message AbsoluteFrequencyBandsParameter {
+	repeated FrequencyBand frequency_bands = 1;
+}
+
+message AlarmMapEntry {
+	bool use_learning_mode = 1;
+	double upper_pre_alarm = 2;
+	double upper_main_alarm = 3;
+}
+
+message AlarmMapDimension {
+	bytes characteristic_value_config = 1;
+	double lower_border = 2;
+	double upper_border = 3;
+}
+
+message AlarmMapConfig {
+	AlarmMapDimension first_dimension = 1;
+	AlarmMapDimension second_dimension = 2;
+	repeated AlarmMapEntry alarm_map_entries = 100;
+}
+
+message AlarmConfig {
+	enum LearningModeType {
+		Unknown = 0;
+		Disabled = 1;
+		Average = 2;
+		StandardDeviation = 3;
+	}
+
+	LearningModeType learning_mode_type = 1;
+	uint32 learning_mode_number_of_values = 2;
+	uint32 alarm_threshold_overruns = 3;
+	bool automatic_alarm_reset = 4;
+	double lower_main_alarm = 10;
+	double lower_pre_alarm = 11;
+	double upper_pre_alarm = 12;
+	double upper_main_alarm = 13;
+	AlarmMapConfig alarm_map = 100;
+}
+
+message SubCharacteristicValueConfig {
+	bytes current_uuid = 1;
+	bytes base_uuid = 2;
+	int64 change_date = 3;
+	string name = 4;
+	bytes template_uuid = 5;
+	CalculationTypeEnum type = 6;
+	bool is_numerical = 7;
+	string variable = 8;
+	bool active = 10;
+	AlarmConfig alarm_config = 20;
+	repeated bytes measurement_config = 30;
+	bytes unit_uuid = 100;
+	string unit_name = 101;
+	repeated FrequencyBand frequency_bands = 200;
+	repeated SubCharacteristicValueConfig sub_characteristc_values = 300;
+}
+
+message CharacteristicValueConfig {
+	bytes current_uuid = 1;
+	bytes base_uuid = 2;
+	int64 change_date = 3;
+	string name = 4;
+	bytes template_uuid = 5;
+	CalculationTypeEnum type = 6;
+	bool is_numerical = 7;
+	bool active = 10;
+	AlarmConfig alarm_config = 20;
+	repeated bytes measurement_config = 30;
+	oneof parameter {
+		BaseMeasurementParameter base_measurement = 100;
+		BeltDriveParameter belt_drive = 101;
+		ConditionGuardParameter condition_guard = 102;
+		CouplingParameter coupling = 103;
+		DefaultMeasurementParameter default_measurement = 104;
+		FanParameter fan = 105;
+		GearStageParameter gear_stage = 106;
+		JournalBearingParameter journal_bearing = 107;
+		LoadDurationDistributionParameter load_duration_distribution = 108;
+		PumpParameter pump = 109;
+		RainflowCountParameter rainflow = 110;
+		RollerBearingParameter roller_bearing = 111;
+		ShaftParameter shaft = 112;
+		TrackedFrequencyBandsParameter tracked_frequency_bands = 113;
+		AbsoluteFrequencyBandsParameter absolute_frequency_bands = 114;
+		ChannelMonitorParameter channel_monitor = 115;
+		OilStatusParameter oil_status = 116;
+		SchaefflerCloudParameter schaeffler_cloud = 117;
+		ProcessSignalMonitorParameter process_signal_monitor = 118;
+		MachineAnalysisEssentialsParameter machine_analysis_essentials = 119;
+	}
+	bytes unit_uuid = 200;
+	string unit_name = 201;
+	repeated FrequencyBand frequency_bands = 300;
+	repeated SubCharacteristicValueConfig sub_characteristc_values = 400;
+	
+	repeated bytes validator_characteristic_values = 500;
+	repeated bytes trigger_characteristic_values = 501;
+	
+}
+
+enum VoltageRange {
+	 voltage_range_not_defined = 0;
+    _0_10V = 1;
+    _0_24V = 2;
+    _min_1V5_plus_1V5 = 3;
+    _min_5V_plus_5V = 4;
+    _min_10V_plus_10V = 5;
+}
+
+enum CurrentRange {
+    current_range_not_defined = 0;
+    _0_20mA = 1;
+    _4_20mA = 2;
+}
+
+message AnalogInputConfig {
+	oneof parameter {
+		VoltageRange voltage_range = 1;
+		CurrentRange current_range = 2;
+	}
+	double scaling = 5;
+	double offset = 6;
+	double minimum_value = 11;
+	double maximum_value = 12;
+}
+
+message DigitalInputConfig {
+	bool logic = 1;
+	int32 pulses_per_revolution = 2;
+	double signal_threshold = 3;
+	double hysteresis = 4;
+}
+
+message ExternalInputConfig {
+	bytes external_device_current_uuid = 1;
+	string name = 4;
+}
+
+enum SignalType
+{
+  not_defined                           = 0;
+  raw_time_signal                       = 1;  // The unit of delta_x is s (seconds)
+  demodulated_time_signal               = 2;  // The unit of delta_x is s (seconds)
+  raw_spectrum                          = 3;  // The unit of delta_x is Hz (Hertz)
+  demodulated_spectrum                  = 4;  // The unit of delta_x is Hz (Hertz)
+  raw_order_analysis                    = 5;  // The unit of delta_x is ° (degree)
+  demodulated_order_analysis            = 6;  // The unit of delta_x is ° (degree)
+  raw_time_synchronous_average          = 7;  // The unit of delta_x is ° (degree)
+  demodulated_time_synchronous_average = 8;  // The unit of delta_x is ° (degree)
+}
+
+message OrderAnalysisConfig {
+	bytes digital_pulse_channel_uuid = 1;
+	double minimum_rotational_speed = 2;
+	double maximum_rotational_speed = 3;
+	uint32 minimum_orders = 4;
+	uint32 maximum_orders = 5;
+	uint32 pulses_per_revolution = 6;
+	uint32 averages = 7;
+}
+
+message MaxDeviationConfigType {
+	double max_deviation = 1;
+	bool percentage = 2;
+}
+
+message MeasurementConfig {
+	bytes current_uuid = 1;
+	bytes base_uuid = 2;
+	int64 change_date = 3;
+	string name = 4;
+	SignalType signal_type = 5;
+	bool active = 10;
+	bytes input_channel_uuid = 20;
+	bytes input_filter_uuid = 30;
+	string input_filter_name = 31;
+	bytes output_filter_uuid = 40;
+	string output_filter_name = 41;
+	
+	uint32 integration = 50;
+	uint32 number_of_samples = 51;
+	uint32 lead_time = 52;
+	
+	OrderAnalysisConfig order_analysis_config = 80;
+	MaxDeviationConfigType max_deviation_config = 81;
+	
+	bytes unit_uuid = 200;
+	string unit_name = 201;
+}
+
+message JobConfig {
+	string device_serial = 1;
+	bytes current_uuid = 2;
+	bytes base_uuid = 3;
+	int64 change_date = 4;
+	string name = 6;
+	bool is_trigger_validator = 7;
+	uint32 job_type = 8;
+	bool active = 10;
+	repeated CharacteristicValueConfig characteristic_value_config = 100;
+	repeated MeasurementConfig measurement_config = 200;
+}
+
+message InputChannelConfig {
+	bytes current_uuid = 1;
+	bytes base_uuid = 2;
+	int64 change_date = 3; 
+	string name = 4;
+	double scaling = 5;
+	double offset = 6;
+	bool active = 10;
+	bytes unit_uuid = 200;
+	string unit_name = 201;
+}
+
+message InputConfig {
+	bytes current_uuid = 1;
+	bytes base_uuid = 2;
+	int64 change_date = 3;
+	string name = 4;
+	double scaling = 5;
+	double offset = 6;
+	int32 sample_rate = 7;
+	bytes channel_type_uuid = 8;
+	
+	string device_serial = 10;
+	string module_serial = 11;
+	int32 channel_index = 12; 
+	bool active = 15;
+	
+	oneof parameter {
+		AnalogInputConfig analog_input_config = 20;
+		DigitalInputConfig digital_input_config = 21;
+		ExternalInputConfig external_config = 22;
+	}
+	bytes unit_uuid = 200;
+	string unit_name = 201;
+	
+	repeated InputChannelConfig input_channel_config = 300;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "trend-data-to-ascii",
+  "version": "1.0.0",
+  "builtin-baseline": "78784c0b0aa87ae63bce01c2c040ce1b3269ecd1",
+  "dependencies": [
+    {
+      "name": "zlib",
+      "platform": "x86 |x64"
+    },
+    {
+      "name": "protobuf",
+      "platform": "x86 |x64"
+    }
+  ]
+}

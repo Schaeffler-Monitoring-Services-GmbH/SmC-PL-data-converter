@@ -1,0 +1,19 @@
+
+Header version:             	3
+Header size:                	96
+Compression:                	zlib (2)
+Config-uuid:                	8C128197-B38E-FED8-5A31-B72C3716516C
+Trend-uuid:                 	EFFBC5E5-034F-4253-A33F-5EFF3100439A
+First timestamp:            	2025-04-16 07:42:10.269 (UTC)
+Last timestamp:             	2025-04-16 07:42:10.269 (UTC)
+Unit-uuid:                  	742F9811-3615-4A4C-B063-0AFCE9321106
+Lower pre alarm level:      	0.000000
+Lower main alarm level:     	-
+Number of trend entries:    	1
+Byte count samples:         	32
+Data checksum:              	3106
+Header checksum:            	21343
+
+ 	 entry                       	timestamp        	 value      	main_alarm_level   	 pre_alarm_level  	alarm_map_index  	 alarm_status   	learning_mode  speed
+  	   0  	2025-04-16 07:42:10.269 (UTC)  	    1.000000          	    1.500000       	    0.500000                	0             	2               	0   	 
+

@@ -1,0 +1,546 @@
+
+Current uuid:                    	3C3A6F38-5DE6-441D-B75D-3F3FF1C6299B
+Base uuid:                       	FA600000-0762-0000-0000-F43D80001561
+Change date:                     	2024-06-06 08:27:53.728 (UTC)
+Name:                            	TA SmC 08
+Serial number:                   	f4:3d:80:00:15:61
+Firmware version:                	3.2.0.1000586-20250408_145207
+IPV4 address:                    	10.179.22.187
+IPV4 netmask:                    	255.255.255.0
+IPV4 gateway:                    	10.179.22.254
+IPV4 dns:                        	172.26.240.107
+Hostname:                        	SchaefflerSmartCheck
+
+Number of job configs:           	3
+Job config[0]
+    Current uuid:      	ABAC8A24-5358-31FC-F4D0-8FC7BF417507
+    Base uuid:         	DE97AB44-8BEF-A502-ACE7-29A73658A134
+    Change date:       	2021-03-22 11:41:29.000 (UTC)
+    Name:              	Device alarm status
+    Active:            	yes
+    Trigger validator: 	no 
+    Characteristic value config[0]
+        Current uuid:    	8C128197-B38E-FED8-5A31-B72C3716516C
+        Base uuid:       	F30442FC-85D6-B934-FB55-B6C54E507494
+        Change date:     	2021-03-22 11:41:29.000 (UTC)
+        Name:            	Device alarm status
+        Active:          	yes
+        Type:            	Calculated characteristic value
+        Is numerical:    	no 
+        Unit uuid:       	742F9811-3615-4A4C-B063-0AFCE9321106
+        Unit name:       	-
+
+        Number of sub characteristic values: 	0
+
+    Number of measurement configs: 	0
+Job config[1]
+    Current uuid:      	58A2D927-7379-08C6-A541-42025865091E
+    Base uuid:         	B8745938-8DF9-F143-C0C5-0C5F23E8C6F3
+    Change date:       	2021-03-22 11:41:28.000 (UTC)
+    Name:              	Measurement triggers and conditions
+    Active:            	yes
+    Trigger validator: 	yes
+    Characteristic value config[0]
+        Current uuid:    	1DEA1C28-542B-7B74-51A9-290656E30DBF
+        Base uuid:       	DC77ADFE-A4B9-7729-D95E-F592ECED089D
+        Change date:     	2021-03-22 11:41:28.000 (UTC)
+        Name:            	Measurement triggers and conditions
+        Active:          	yes
+        Type:            	Calculated characteristic value
+        Is numerical:    	no 
+        Unit uuid:       	742F9811-3615-4A4C-B063-0AFCE9321106
+        Unit name:       	-
+
+        Number of sub characteristic values: 	1
+        Sub characteristic value config[0]
+            Current uuid:       	863A5712-AFFF-409D-A6F2-A12573E24194
+            Base uuid:          	6FC8EE26-BE59-25A6-E42D-338A9B58056F
+            Change date:        	2025-04-16 07:09:14.289 (UTC)
+            Name:               	Machine is running
+            Active:             	yes
+            Variable:           	measurement_condition
+            Type:               	Validator
+            Is numerical:       	yes
+            Alarm config
+              Learning mode type:             	Disabled
+              Learning mode number of values: 	0
+              Alarm threshold overruns:       	1
+              Automatic alarm reset:          	yes
+              Lower main alarm:               	-
+              Lower pre alarm:                	0.010000
+              Upper pre alarm:                	50.000000
+              Upper main alarm:               	50.000000
+            Measurement config: 	28A5171C-3642-443B-A909-77717EECD1F5
+            Unit uuid:          	96724211-DD85-4BFF-935C-ED8881CE0A4D
+            Unit name:          	g
+            Sub characteristic value config[0]
+                Current uuid:       	092A054B-3F7B-4C6F-9E16-A1C3C3F17868
+                Base uuid:          	D93B4132-1998-263E-FC37-3768DF7F3473
+                Change date:        	2025-04-16 07:09:14.289 (UTC)
+                Name:               	Machine is running - Hour meter
+                Active:             	yes
+                Variable:           	hour_meter
+                Type:               	Hour meter
+                Is numerical:       	yes
+                Alarm config
+                  Learning mode type:             	Disabled
+                  Learning mode number of values: 	0
+                  Alarm threshold overruns:       	1
+                  Automatic alarm reset:          	yes
+                  Lower main alarm:               	-
+                  Lower pre alarm:                	0.000000
+                  Upper pre alarm:                	0.000000
+                  Upper main alarm:               	0.000000
+                Unit uuid:          	5DC5180F-5935-4D57-84A8-4EF4AEDF28BF
+                Unit name:          	h
+
+    Number of measurement configs: 	1
+    Measurement config[0]
+        Current uuid:    	28A5171C-3642-443B-A909-77717EECD1F5
+        Base uuid:       	43D9A103-4A7D-611C-D5C5-72951F0D15A0
+        Change date:     	2025-04-16 07:09:14.289 (UTC)
+        Active:          	yes
+        Name:            	Machine is running
+        Input channel:   	85D60F44-BF97-47C6-8E12-561924D30B2F
+        Signal type:           	raw time signal
+        Unit uuid:       	96724211-DD85-4BFF-935C-ED8881CE0A4D
+        Unit name:       	g
+        Integration:     	0
+        Number of samples: 	2560
+        Lead time:       	0
+Job config[2]
+    Current uuid:      	D1A9362B-6B2F-4E22-BDA0-D996C525403A
+    Base uuid:         	03E17799-28AE-7120-6C51-13CB8CB07EF0
+    Change date:       	2025-04-16 07:09:14.289 (UTC)
+    Name:              	Base measurement job
+    Active:            	yes
+    Trigger validator: 	no 
+    Characteristic value config[0]
+        Current uuid:    	52ED4728-523E-49BE-8069-0174C5FEC41E
+        Base uuid:       	718BF7C2-CF90-6B4F-C654-BFFADB2DC730
+        Change date:     	2025-04-16 07:09:14.289 (UTC)
+        Name:            	Base measurement job
+        Active:          	yes
+        Template uuid:   	96724211-DD85-4BFF-935C-ED8881CF0137
+        Type:            	Calculated characteristic value
+        Is numerical:    	no 
+        Base measurement parameter
+          Maximum speed:   	500.000000
+        Unit uuid:       	742F9811-3615-4A4C-B063-0AFCE9321106
+        Unit name:       	-
+
+        Number of sub characteristic values: 	7
+        Sub characteristic value config[0]
+            Current uuid:       	F5179BF5-5A29-44A3-BCA9-29D983D873C1
+            Base uuid:          	DCE978A4-44F6-DE53-F498-954DDE7F85DA
+            Change date:        	2025-04-16 07:09:14.289 (UTC)
+            Name:               	Peak-peak - Acceleration (High vibration values)
+            Active:             	yes
+            Variable:           	peak2peak
+            Template uuid:      	96724211-DD85-4BFF-935C-ED8881CF0044
+            Type:               	Peak-peak
+            Is numerical:       	yes
+            Alarm config
+              Learning mode type:             	Average
+              Learning mode number of values: 	1000
+              Alarm threshold overruns:       	10
+              Automatic alarm reset:          	yes
+              Lower main alarm:               	-
+              Lower pre alarm:                	0.000000
+              Upper pre alarm:                	0.700000
+              Upper main alarm:               	1.000000
+            Measurement config: 	640F9A42-1AC5-419A-8026-D8C63BA70EA8
+            Unit uuid:          	96724211-DD85-4BFF-935C-ED8881CE0A4D
+            Unit name:          	g
+        Sub characteristic value config[1]
+            Current uuid:       	2C0B8DE5-1783-4A1C-9E71-2849CCF277A5
+            Base uuid:          	3E30F87B-98E5-5362-0760-215646DD3198
+            Change date:        	2025-04-16 07:09:14.289 (UTC)
+            Name:               	Load
+            Active:             	yes
+            Variable:           	additional_signal_1
+            Template uuid:      	96724211-DD85-4BFF-935C-ED8881CF0046
+            Type:               	DC
+            Is numerical:       	yes
+            Alarm config
+              Learning mode type:             	Disabled
+              Learning mode number of values: 	0
+              Alarm threshold overruns:       	10
+              Automatic alarm reset:          	yes
+              Lower main alarm:               	1.000000
+              Lower pre alarm:                	10.900000
+              Upper pre alarm:                	90.100000
+              Upper main alarm:               	100.000000
+            Measurement config: 	134DAAC1-8EF7-4F5C-8CA0-A8A7E8796672
+            Unit uuid:          	930176A7-F921-4DA9-BF6F-5C1DF65E2A13
+            Unit name:          	%
+        Sub characteristic value config[2]
+            Current uuid:       	8BB07DAA-6E72-4F63-B8AF-43C2AA75F86E
+            Base uuid:          	608197D3-42F9-BBA1-1F55-F26EF3035CEB
+            Change date:        	2025-04-16 07:09:14.289 (UTC)
+            Name:               	Temperature - System temperature sensor
+            Active:             	yes
+            Variable:           	temperature
+            Template uuid:      	96724211-DD85-4BFF-935C-ED8881CF0044
+            Type:               	DC
+            Is numerical:       	yes
+            Alarm config
+              Learning mode type:             	Disabled
+              Learning mode number of values: 	0
+              Alarm threshold overruns:       	10
+              Automatic alarm reset:          	yes
+              Lower main alarm:               	-
+              Lower pre alarm:                	0.000000
+              Upper pre alarm:                	52.500000
+              Upper main alarm:               	70.000000
+            Measurement config: 	1D70CC2D-2797-4ED4-AFAE-8CD2EBBDF79B
+            Unit uuid:          	1E7AF13B-9B71-4E16-8858-B19449CFD17F
+            Unit name:          	°C
+        Sub characteristic value config[3]
+            Current uuid:       	E8BFB3F7-968E-4D4E-9727-17A0272F394E
+            Base uuid:          	CAACC00F-26AD-3F62-5CDC-F2107917D4DB
+            Change date:        	2025-04-16 07:09:14.289 (UTC)
+            Name:               	RMS broadband - Demodulation (Overall status)
+            Active:             	yes
+            Variable:           	rms_demodulation
+            Template uuid:      	96724211-DD85-4BFF-935C-ED8881CF0044
+            Type:               	Time signal RMS
+            Is numerical:       	yes
+            Alarm config
+              Learning mode type:             	Average
+              Learning mode number of values: 	1000
+              Alarm threshold overruns:       	10
+              Automatic alarm reset:          	yes
+              Lower main alarm:               	-
+              Lower pre alarm:                	0.000000
+              Upper pre alarm:                	0.700000
+              Upper main alarm:               	1.000000
+            Measurement config: 	D482A80B-839B-4B01-ADCE-887DFD59C452
+            Unit uuid:          	96724211-DD85-4BFF-935C-ED8881CE0A4D
+            Unit name:          	g
+        Sub characteristic value config[4]
+            Current uuid:       	B229D440-EEC4-42A0-8249-E02D468BF218
+            Base uuid:          	9357D7C1-97E8-D65C-A51A-8923BBB5276B
+            Change date:        	2025-04-16 07:09:14.289 (UTC)
+            Name:               	ISO10816-1 (2Hz - 1kHz) - Velocity
+            Active:             	yes
+            Variable:           	iso10816
+            Template uuid:      	96724211-DD85-4BFF-935C-ED8881CF0048
+            Type:               	ISO10816
+            Is numerical:       	yes
+            Alarm config
+              Learning mode type:             	Average
+              Learning mode number of values: 	1000
+              Alarm threshold overruns:       	10
+              Automatic alarm reset:          	yes
+              Lower main alarm:               	-
+              Lower pre alarm:                	0.000000
+              Upper pre alarm:                	2.800000
+              Upper main alarm:               	7.100000
+            Measurement config: 	46C106BE-A900-41A6-A578-7CD3B57C3BC4
+            Unit uuid:          	72859531-1F7D-4133-B480-BCD964C87BE1
+            Unit name:          	mm/s
+        Sub characteristic value config[5]
+            Current uuid:       	8898D10D-72D5-4B91-8DA3-E1FE0A8D4E25
+            Base uuid:          	197C4E99-A2F5-F3F5-3219-46C6FAA87299
+            Change date:        	2025-04-16 07:09:14.289 (UTC)
+            Name:               	Voltage
+            Active:             	yes
+            Variable:           	additional_signal_2
+            Template uuid:      	96724211-DD85-4BFF-935C-ED8881CF0046
+            Type:               	DC
+            Is numerical:       	yes
+            Alarm config
+              Learning mode type:             	Disabled
+              Learning mode number of values: 	0
+              Alarm threshold overruns:       	10
+              Automatic alarm reset:          	yes
+              Lower main alarm:               	2.000000
+              Lower pre alarm:                	2.800000
+              Upper pre alarm:                	9.200000
+              Upper main alarm:               	10.000000
+            Measurement config: 	F17E54DD-BDA0-492B-8234-871B36C63EAC
+            Unit uuid:          	061FD037-80DF-41CB-AC80-1F1DAEB6F56C
+            Unit name:          	V
+        Sub characteristic value config[6]
+            Current uuid:       	CB45D06F-7435-4F1E-9175-B1DB2EC1F7A3
+            Base uuid:          	19BA0086-CD15-D156-B77D-4375A91FF65F
+            Change date:        	2025-04-16 07:09:14.289 (UTC)
+            Name:               	RMS broadband - Acceleration (Overall status)
+            Active:             	yes
+            Variable:           	rms_raw_high
+            Template uuid:      	96724211-DD85-4BFF-935C-ED8881CF0044
+            Type:               	Time signal RMS
+            Is numerical:       	yes
+            Alarm config
+              Learning mode type:             	Average
+              Learning mode number of values: 	1000
+              Alarm threshold overruns:       	10
+              Automatic alarm reset:          	yes
+              Lower main alarm:               	-
+              Lower pre alarm:                	0.000000
+              Upper pre alarm:                	0.700000
+              Upper main alarm:               	1.000000
+            Measurement config: 	640F9A42-1AC5-419A-8026-D8C63BA70EA8
+            Unit uuid:          	96724211-DD85-4BFF-935C-ED8881CE0A4D
+            Unit name:          	g
+
+    Number of measurement configs: 	6
+    Measurement config[0]
+        Current uuid:    	640F9A42-1AC5-419A-8026-D8C63BA70EA8
+        Base uuid:       	0A0A8648-B0DC-442B-1B4F-21286BE75C7F
+        Change date:     	2025-04-16 07:09:14.289 (UTC)
+        Active:          	yes
+        Name:            	Vibration sensor - Acceleration 10kHz Low-pass
+        Input channel:   	85D60F44-BF97-47C6-8E12-561924D30B2F
+        Signal type:           	raw time signal
+        Unit uuid:       	96724211-DD85-4BFF-935C-ED8881CE0A4D
+        Unit name:       	g
+        Integration:     	0
+        Number of samples: 	1600
+        Lead time:       	0
+    Measurement config[1]
+        Current uuid:    	134DAAC1-8EF7-4F5C-8CA0-A8A7E8796672
+        Base uuid:       	B09E51F3-1F04-705A-F5D8-B5530DB9CF80
+        Change date:     	2025-04-16 07:09:14.289 (UTC)
+        Active:          	yes
+        Name:            	Load - 500Hz Low-pass
+        Input channel:   	8407A2ED-D6F9-14AB-CF99-42B8AA7A28C3
+        Signal type:           	raw time signal
+        Unit uuid:       	930176A7-F921-4DA9-BF6F-5C1DF65E2A13
+        Unit name:       	%
+        Integration:     	0
+        Number of samples: 	3200
+        Lead time:       	0
+    Measurement config[2]
+        Current uuid:    	1D70CC2D-2797-4ED4-AFAE-8CD2EBBDF79B
+        Base uuid:       	378FBFB2-4DB2-6573-0076-852ADA9BF662
+        Change date:     	2025-04-16 07:09:14.289 (UTC)
+        Active:          	yes
+        Name:            	System temperature sensor
+        Input channel:   	B3C4000B-5A57-386F-9C8B-B9EA5780CBC5
+        Signal type:           	raw time signal
+        Unit uuid:       	1E7AF13B-9B71-4E16-8858-B19449CFD17F
+        Unit name:       	°C
+        Integration:     	0
+        Number of samples: 	1600
+        Lead time:       	0
+    Measurement config[3]
+        Current uuid:    	D482A80B-839B-4B01-ADCE-887DFD59C452
+        Base uuid:       	416DD198-7587-C130-F3B6-59CF52C84857
+        Change date:     	2025-04-16 07:09:14.289 (UTC)
+        Active:          	yes
+        Name:            	Vibration sensor - Demodulation 2kHz Low-pass
+        Input channel:   	85D60F44-BF97-47C6-8E12-561924D30B2F
+        Signal type:           	demodulated time signal
+        Unit uuid:       	96724211-DD85-4BFF-935C-ED8881CE0A4D
+        Unit name:       	g
+        Integration:     	0
+        Number of samples: 	1600
+        Lead time:       	0
+    Measurement config[4]
+        Current uuid:    	46C106BE-A900-41A6-A578-7CD3B57C3BC4
+        Base uuid:       	1D15E01D-B9C2-838D-6B0D-2C3C59406474
+        Change date:     	2025-04-16 07:09:14.289 (UTC)
+        Active:          	yes
+        Name:            	Vibration sensor - Velocity 1kHz Low-pass
+        Input channel:   	85D60F44-BF97-47C6-8E12-561924D30B2F
+        Signal type:           	raw time signal
+        Unit uuid:       	72859531-1F7D-4133-B480-BCD964C87BE1
+        Unit name:       	mm/s
+        Integration:     	1
+        Number of samples: 	1600
+        Lead time:       	0
+    Measurement config[5]
+        Current uuid:    	F17E54DD-BDA0-492B-8234-871B36C63EAC
+        Base uuid:       	F6C1715B-1C6B-0B52-9E81-5F85E2A91823
+        Change date:     	2025-04-16 07:09:14.289 (UTC)
+        Active:          	yes
+        Name:            	Voltage - 500Hz Low-pass
+        Input channel:   	A9D9EDFF-8892-D26A-3561-B8F91B2A0919
+        Signal type:           	raw time signal
+        Unit uuid:       	061FD037-80DF-41CB-AC80-1F1DAEB6F56C
+        Unit name:       	V
+        Integration:     	0
+        Number of samples: 	3200
+        Lead time:       	0
+
+Number of input channel configs: 	7
+Input Config[0]
+    Current uuid:      	C89B2242-5206-2459-E9DF-11F5141C0FF5
+    Base uuid:         	380834CE-F1BD-BD9B-FC0F-E480C14AC9E4
+    Change date:       	2023-12-23 10:53:52.165 (UTC)
+    Name:              	Dummy Input
+    Active:            	yes
+    Sample rate:      	0
+    Unit uuid:         	1A433748-A499-48E2-BF99-55198ECCAC7C
+    Unit name:         	Hz
+    External Input Device
+        External device:   	7C201CB2-78C1-7A37-5204-9AFFA6520BD7
+        Name:              	Controller
+    Input Channel Config[0]
+        Current uuid:      	5CD09963-42D7-C1A8-4E3C-041449367FB6
+        Base uuid:         	12E56CEB-9F16-2B7D-C5E0-BBDDCCE2117D
+        Change date:       	2023-12-23 10:53:52.165 (UTC)
+        Name:              	Dummy Input
+        Active:            	yes
+        Scaling:           	1.000000
+        Unit uuid:         	1A433748-A499-48E2-BF99-55198ECCAC7C
+        Unit name:         	Hz
+    Device serial number: 	f4:3d:80:00:15:61
+    Module serial number: 	
+    Channel index:        	0
+Input Config[1]
+    Current uuid:      	68C0D131-0525-437D-9033-6D3AE656E94E
+    Base uuid:         	0598F343-916D-49F9-80B7-CCF77CA3EF9C
+    Change date:       	2023-11-10 14:37:45.000 (UTC)
+    Name:              	Vibration sensor
+    Active:            	yes
+    Sample rate:      	25600
+    Unit uuid:         	96724211-DD85-4BFF-935C-ED8881CE0A4D
+    Unit name:         	g
+    Analog Input Config
+        Input range:       	-1.5V - 1.5V
+        Scaling:           	40.000000
+        Offset:            	0.000000
+        Minimum value:     	-50.000000
+        Maximum value:     	50.000000
+    Input Channel Config[0]
+        Current uuid:      	85D60F44-BF97-47C6-8E12-561924D30B2F
+        Base uuid:         	A73C4254-4949-83D3-8073-3EAFC419E076
+        Change date:       	2025-04-16 07:09:14.289 (UTC)
+        Name:              	Vibration sensor
+        Active:            	yes
+        Scaling:           	1.000000
+        Unit uuid:         	96724211-DD85-4BFF-935C-ED8881CE0A4D
+        Unit name:         	g
+    Device serial number: 	f4:3d:80:00:15:61
+    Module serial number: 	SMC_XMEGA_IN
+    Channel index:        	0
+Input Config[2]
+    Current uuid:      	89F50054-47AB-46F0-9D3C-46663D6EF8BB
+    Base uuid:         	909241A3-103E-4E4F-A777-E4DC55CED86F
+    Change date:       	2023-11-10 14:37:45.000 (UTC)
+    Name:              	Temperature sensor
+    Active:            	yes
+    Sample rate:      	1
+    Unit uuid:         	1E7AF13B-9B71-4E16-8858-B19449CFD17F
+    Unit name:         	°C
+    Analog Input Config
+        Input range:       	-5V - 5V
+        Scaling:           	25.600000
+        Offset:            	0.000000
+        Minimum value:     	-20.000000
+        Maximum value:     	85.000000
+    Input Channel Config[0]
+        Current uuid:      	B3C4000B-5A57-386F-9C8B-B9EA5780CBC5
+        Base uuid:         	DB40574D-6528-FA24-4208-E8F20E75FCB1
+        Change date:       	2023-12-23 10:53:52.165 (UTC)
+        Name:              	System temperature sensor
+        Active:            	yes
+        Scaling:           	1.000000
+        Unit uuid:         	1E7AF13B-9B71-4E16-8858-B19449CFD17F
+        Unit name:         	°C
+    Device serial number: 	f4:3d:80:00:15:61
+    Module serial number: 	SMC_TEMPERATURE
+    Channel index:        	0
+Input Config[3]
+    Current uuid:      	A04A8246-34BA-424C-807B-2B61DE84970D
+    Base uuid:         	A04A8246-34BA-424C-807B-2B61DE84970E
+    Change date:       	2023-11-10 14:37:43.000 (UTC)
+    Name:              	Fixed Values
+    Active:            	yes
+    Sample rate:      	0
+    Unit name:         	
+    Input Channel Config[0]
+        Current uuid:      	72283FA8-B141-1914-1EAC-CA46C6A65052
+        Base uuid:         	EF634F66-A5D3-4C50-1EBF-E387DA0491A2
+        Change date:       	2023-12-23 10:53:52.165 (UTC)
+        Name:              	Fixed speed (3000 RPM)
+        Active:            	yes
+        Scaling:           	3000.000000
+        Unit uuid:         	1702089B-8851-4239-A4E3-0C34B9BBBED9
+        Unit name:         	RPM
+    Device serial number: 	f4:3d:80:00:15:61
+    Module serial number: 	
+    Channel index:        	0
+Input Config[4]
+    Current uuid:      	54B11350-7B10-DE9F-D4A6-694065A1D28C
+    Base uuid:         	C0012FEC-FCF9-68CB-F2C2-C8566B0AD681
+    Change date:       	2023-12-23 10:53:52.165 (UTC)
+    Name:              	Digital input
+    Active:            	yes
+    Sample rate:      	1280
+    Unit uuid:         	1702089B-8851-4239-A4E3-0C34B9BBBED9
+    Unit name:         	RPM
+    Digital Input Config
+        Logic:              	1 active
+        Pulses per revolution:	1
+        Signal threshold:  	7.000000
+        Hysteresis:        	2.000000
+    Input Channel Config[0]
+        Current uuid:      	9000CC66-5893-2B09-31E8-12810C6982E3
+        Base uuid:         	F4F52378-4A2F-94D5-4CFC-E259B430F1AB
+        Change date:       	2023-12-23 10:53:52.165 (UTC)
+        Name:              	Digital input (speed)
+        Active:            	yes
+        Scaling:           	1.000000
+        Unit uuid:         	1702089B-8851-4239-A4E3-0C34B9BBBED9
+        Unit name:         	RPM
+    Device serial number: 	f4:3d:80:00:15:61
+    Module serial number: 	SMC_XMEGA_IN
+    Channel index:        	0
+Input Config[5]
+    Current uuid:      	E62AD718-84CB-41A6-9B6B-00D01802882B
+    Base uuid:         	9E598087-F753-1015-2A63-20193113D9F8
+    Change date:       	2023-12-23 10:53:52.165 (UTC)
+    Name:              	Analogue input 1
+    Active:            	yes
+    Sample rate:      	1280
+    Unit uuid:         	061FD037-80DF-41CB-AC80-1F1DAEB6F56C
+    Unit name:         	V
+    Analog Input Config
+        Input range:       	0 - 20mA
+        Scaling:           	0.400000
+        Offset:            	2.000000
+        Minimum value:     	2.000000
+        Maximum value:     	10.000000
+    Input Channel Config[0]
+        Current uuid:      	A9D9EDFF-8892-D26A-3561-B8F91B2A0919
+        Base uuid:         	3AAFB4E3-EBD1-F7EE-E827-AA5F3FCFEE39
+        Change date:       	2023-12-23 10:53:52.165 (UTC)
+        Name:              	Voltage
+        Active:            	yes
+        Scaling:           	1.000000
+        Unit uuid:         	061FD037-80DF-41CB-AC80-1F1DAEB6F56C
+        Unit name:         	V
+    Device serial number: 	f4:3d:80:00:15:61
+    Module serial number: 	SMC_XMEGA_IN
+    Channel index:        	0
+Input Config[6]
+    Current uuid:      	F44E8BFF-7D49-A449-2015-3E4C72FF943B
+    Base uuid:         	DB337091-3405-3F26-C47C-86B51900B4E0
+    Change date:       	2023-12-23 10:53:52.165 (UTC)
+    Name:              	Analogue input 2
+    Active:            	yes
+    Sample rate:      	1280
+    Unit uuid:         	930176A7-F921-4DA9-BF6F-5C1DF65E2A13
+    Unit name:         	%
+    Analog Input Config
+        Input range:       	4 - 20mA
+        Scaling:           	6.187500
+        Offset:            	1.000000
+        Minimum value:     	1.000000
+        Maximum value:     	100.000000
+    Input Channel Config[0]
+        Current uuid:      	8407A2ED-D6F9-14AB-CF99-42B8AA7A28C3
+        Base uuid:         	E8E5F2F6-974A-B62C-D31D-BAE4F45961DE
+        Change date:       	2023-12-23 10:53:52.165 (UTC)
+        Name:              	Load
+        Active:            	yes
+        Scaling:           	1.000000
+        Unit uuid:         	930176A7-F921-4DA9-BF6F-5C1DF65E2A13
+        Unit name:         	%
+    Device serial number: 	f4:3d:80:00:15:61
+    Module serial number: 	SMC_XMEGA_IN
+    Channel index:        	1

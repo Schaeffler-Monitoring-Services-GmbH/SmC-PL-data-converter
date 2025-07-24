@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+option optimize_for = LITE_RUNTIME;
+
+package optime_alarm_data;
+
+
+enum AlarmStateEnum {
+		ALARM_STATE_UNKNOWN = 0;
+		ALARM_STATE_NO_ALARM = 1;
+		ALARM_STATE_PRE_ALARM = 2;
+		ALARM_STATE_MAIN_ALARM = 3;
+		ALARM_STATE_CHAR_VAL_ERROR = 4;
+}
+
+message NumericalKpi {
+	message NumericalValues {
+		double		     value = 1;
+		// The numerical value of the kpi
+		
+		
+	    AlarmStateEnum 	 alarm_state = 100;
+	    // The alarm status of the kpi
+	    
+	    int64            alarm_state_since = 101;
+		// Timestamp of last alarm state change in us from 1.1.1970 UTC
+		 
+	    uint32	 	     alarm_index = 102;
+		// The index within the alarm map, in case a config with an alarm map is used, otherwise 0
+		
+		
+		double		     lower_main_alarm = 200;
+		// A value below this border will lead to a main alarm
+		
+		double		     lower_pre_alarm = 201;
+		// A value below this border, but greater than or equal to  lower_main_alarm will lead to a pre alarm
+		
+		double		     upper_pre_alarm = 202;
+		// A value above this border, but lower than or equal to upper_main_alarm will lead to a pre alarm
+		
+		double		     upper_main_alarm = 203;
+		// A value above this border will lead to a main alarm
+	}
+
+	bytes            kpi_config_uuid = 1;
+	// the unique id of the kpi configuration on the device
+	
+	bytes            kpi_type = 2;
+	// the unique id of the kpi type (template)
+	
+	string           name = 3;
+    // Name of the kpi, e.g. "Inner race"
+
+	string           variable = 4;
+    // Name of the variable of this kpi within the compound kpi, e.g. "inner_race"
+    
+    bytes            unit_uuid = 5;
+    // The unit of the calculated value
+    
+    //
+	// The next three variables identify the sensor (also used for onboarding)
+	//
+	string device_serial = 20;
+	// The serial number of the device. 
+	
+	string module_serial = 21;
+	// The serial number of the modules
+		
+	int32 channel_index = 22; 
+	// The channel index within the module
+	
+	bytes channel_type = 23; 
+	// The type of the channel (uuid), e.g. vibration, digital in, etc.
+	
+    NumericalValues  numerical_values = 100;
+    // The numerial values of the kpi
+}
+
+message CompoundKpi {
+	bytes            kpi_config_uuid = 1;
+	// the unique id of the kpi configuration on the device
+	
+	bytes            kpi_type = 2;
+	// the unique id of the kpi type (template)
+	
+	string           name = 3;
+    // Name of the kpi, e.g. "Roller Bearing 6202"
+		
+	AlarmStateEnum 	 alarm_state = 100;
+	// The alarm status of the kpi
+	
+	int64 alarm_state_since = 101;
+	// Timestamp of last alarm state change in us from 1.1.1970 UTC 
+	
+	
+	repeated NumericalKpi kpis = 300;
+	// Sub-Kpis from which this compound kpi is calculated (e.g. roller bearing kpi is calculated from inner race, outer race, cage ...)  
+}
+
+
+
+message JobData {
+	bytes job_data_uuid = 1;
+    // Unique identifier of this job data set.
+    
+	bytes job_config_uuid = 2;
+    // Unique identifier of the job measurement configuration
+	
+    string name = 3;
+    // Name of the measurement job, e.g. "Schaeffler Cloud Sensor 1"
+	
+	int64 timestamp = 4;
+	// Measurement timestamp in us from 1.1.1970 UTC 
+	
+	AlarmStateEnum 	alarm_state = 100;
+	// The alarm state of the job
+	
+	int64 alarm_state_since = 101;
+	// Timestamp of last alarm state change in us from 1.1.1970 UTC 
+	
+	repeated CompoundKpi kpis = 200;
+	// Calculated kpis
+}

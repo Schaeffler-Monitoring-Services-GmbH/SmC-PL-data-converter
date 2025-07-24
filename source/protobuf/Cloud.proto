@@ -1,0 +1,119 @@
+syntax = "proto3";
+
+option optimize_for = LITE_RUNTIME;
+
+package cloud;
+
+
+message BearingProperties {
+    bytes bearing_uuid = 1;
+    // Unique identifier of the examined bearing.
+    
+    string name = 2;
+    // example: FAG 6205
+
+    double rotational_speed_ratio = 3;
+    // example: 1
+    // Ratio of the rotational speed of the examined bearing in relation to the rotational speed of the time signal
+    
+    bool fixed_inner_race = 4;
+    // example: false
+    // true if the inner race is fixed
+
+    string manufacturer_name = 5;
+    // example: FAG
+
+    double cage_frequency = 10;
+    // example: 0.3809
+    // Cage damage frequency (Hz)
+    
+    double inner_race_frequency = 11;
+    // example: 4.9525
+    // Inner raceway damage frequency (Hz)
+ 
+    double outer_race_frequency = 12;
+    // example: 3.0457
+    // Outer raceway damage frequency (Hz)
+    
+    double ballspin_frequency = 13;
+    // example: 3.9613
+    // roller damage frequency (Hz)
+}
+
+
+
+
+message TimeSignal {
+  bytes timesignal_uuid = 1;
+  // Unique identifier of timesignal 
+  
+  bytes timesignal_config_uuid = 2;
+  // Unique identifier of the timesignal configurations  
+  
+  bytes	unit_uuid = 3;
+  // Unit of the timesignal
+  
+  bytes binary_data = 100;
+  // Format of binary data: http://x01000940/mediawiki/index.php/AG_Gemeinsame_Dateiformate#Version_3
+}
+
+
+enum KPI_TYPE {
+	INVALID = 0;
+	ISO10816=100;
+	RMS_LOW=101;
+	KURTOSIS_LOW=102;
+	RMS_HIGH=103;
+	KURTOSIS_HIGH=104;
+	RMS_DEMODULATION=105;
+	ROTATIONAL_SPEED=200;
+	TEMPERATURE=201;
+}
+
+message Kpi {
+  bytes kpi_config_uuid = 1;
+  // Unique identifier of kpi configuration
+  
+  KPI_TYPE kpi_type = 2;
+  // The type fo the kpi
+    
+  double value = 3;
+  // The calculated value
+  
+  bytes	unit_uuid = 4;
+  // The unit of the calculated value
+  
+  
+}
+
+message CloudData {
+	bytes job_data_uuid = 1;
+    // Unique identifier of measurement data.
+    
+	bytes job_config_uuid = 2;
+    // Unique identifier of the measurement configuration
+	
+    string name = 3;
+    // Name of the measurement job, e.g. "Schaeffler Cloud Sensor 1"
+	
+	int64 timestamp = 4;
+	// Measurement timestamp in us from 1.1.1970 UTC 
+	
+	string device_serial = 5;
+	// The serial number of the device
+	
+	string module_serial = 6;
+	// The serial number of the modules
+	
+	int32 channel_index = 7; 
+	// The channel index within the module
+	
+	repeated BearingProperties bearing_properties = 20;
+	
+	
+	repeated TimeSignal timesignals = 100;
+	// Measured timesignals
+	
+	repeated Kpi kpis = 200;
+	// Calculated kpis
+}
