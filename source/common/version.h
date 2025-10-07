@@ -17,4 +17,4 @@
 #include <string>
 
 const std::string program_name("Schaeffler SmartCheck and ProLink data converter");
-const std::string version_number("3.2.0");
+const std::string version_number("3.4.0");
