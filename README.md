@@ -103,7 +103,7 @@ If you are working behind a proxy server, the vcpkg tools need some extra config
 VS2022 again an enter the following commands:
 
     setx HTTP_PROXY "http://myproxy.mydomain.com:8080"
-    setx HTTPS_PROXY "https://myproxy.mydomain.com:8080"
+    setx HTTPS_PROXY "http://myproxy.mydomain.com:8080"
 
 ![Proxy settings](doc/images/visual_studio_proxy.png)
 
