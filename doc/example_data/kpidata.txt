@@ -1,0 +1,103 @@
+Characteristic value current uuid:   	088284CA-E23D-44DE-B3D4-9AEF72882E79
+Measurement time:                    	2025-12-08 16:05:38.980 (UTC)
+Alarm status:                        	1
+Alarm state since:                   	2025-12-04 08:46:46.000 (UTC)
+Sub characteristic values:           	6
+ 1.: Characteristic value config:    	C1540290-D722-41B0-A6F7-E5C0C225E818
+     Value:                          	3000.000000
+     Alarm status:                   	1
+     Alarm state since:              	2025-12-04 08:46:46.000 (UTC)
+     Alarm map index:                	0
+     Lower main alarm limit:         	3000.000000
+     Lower pre alarm limit:          	3000.000000
+     Upper pre alarm limit:          	3000.000000
+     Upper main alarm limit:         	3000.000000
+     Learning mode active:           	3000.000000
+     Unit uuid:                      	1702089B-8851-4239-A4E3-0C34B9BBBED9
+     Unit string:                    	RPM
+     Timesignal uudis:               	0
+     Timesignal unit name:           	
+     Timesignal signal type:         	0
+ 2.: Characteristic value config:    	C3947260-F6F8-4AA6-87C7-4775089B9383
+     Value:                          	1.000000
+     Alarm status:                   	1
+     Alarm state since:              	2025-12-08 16:05:38.980 (UTC)
+     Alarm map index:                	0
+     Lower main alarm limit:         	0.000000
+     Lower pre alarm limit:          	0.100000
+     Upper pre alarm limit:          	0.900000
+     Upper main alarm limit:         	1.000000
+     Learning mode active:           	1.000000
+     Unit uuid:                      	742F9811-3615-4A4C-B063-0AFCE9321106
+     Unit string:                    	-
+     Timesignal uudis:               	0
+     Timesignal unit name:           	
+     Timesignal signal type:         	0
+ 3.: Characteristic value config:    	890C1263-14B9-4E23-8AF8-9FC4B857CECD
+     Value:                          	0.000000
+     Alarm status:                   	1
+     Alarm state since:              	2025-12-04 08:46:46.000 (UTC)
+     Alarm map index:                	0
+     Lower main alarm limit:         	nan
+     Lower pre alarm limit:          	0.000000
+     Upper pre alarm limit:          	0.700000
+     Upper main alarm limit:         	1.000000
+     Learning mode active:           	1.000000
+     Unit uuid:                      	96724211-DD85-4BFF-935C-ED8881CE0A4D
+     Unit string:                    	g
+     Timesignal uudis:               	1
+      1.:                            	3F1307B4-C20B-488E-AE90-ED3DAC7E740D
+     Timesignal unit uuid:           	96724211-DD85-4BFF-935C-ED8881CE0A4D
+     Timesignal unit name:           	g
+     Timesignal signal type:         	1
+ 4.: Characteristic value config:    	5F847185-3E2E-40C7-9E99-8980D5189F6E
+     Value:                          	0.000000
+     Alarm status:                   	1
+     Alarm state since:              	2025-12-04 08:46:46.000 (UTC)
+     Alarm map index:                	0
+     Lower main alarm limit:         	nan
+     Lower pre alarm limit:          	0.000000
+     Upper pre alarm limit:          	0.700000
+     Upper main alarm limit:         	1.000000
+     Learning mode active:           	1.000000
+     Unit uuid:                      	96724211-DD85-4BFF-935C-ED8881CE0A4D
+     Unit string:                    	g
+     Timesignal uudis:               	1
+      1.:                            	C434C118-D494-45EA-95B9-7BE11B3ECCED
+     Timesignal unit uuid:           	96724211-DD85-4BFF-935C-ED8881CE0A4D
+     Timesignal unit name:           	g
+     Timesignal signal type:         	2
+ 5.: Characteristic value config:    	DBBD5DB3-1E9A-4045-8C56-1295EE4A2FE3
+     Value:                          	0.000000
+     Alarm status:                   	1
+     Alarm state since:              	2025-12-04 08:46:46.000 (UTC)
+     Alarm map index:                	0
+     Lower main alarm limit:         	nan
+     Lower pre alarm limit:          	0.000000
+     Upper pre alarm limit:          	0.700000
+     Upper main alarm limit:         	1.000000
+     Learning mode active:           	1.000000
+     Unit uuid:                      	96724211-DD85-4BFF-935C-ED8881CE0A4D
+     Unit string:                    	g
+     Timesignal uudis:               	1
+      1.:                            	3E5D1DE9-4237-4497-9AE0-A3103A120D2F
+     Timesignal unit uuid:           	96724211-DD85-4BFF-935C-ED8881CE0A4D
+     Timesignal unit name:           	g
+     Timesignal signal type:         	1
+ 6.: Characteristic value config:    	027C2DC4-1317-49DA-89A7-D30004412388
+     Value:                          	0.000000
+     Alarm status:                   	1
+     Alarm state since:              	2025-12-04 08:46:46.000 (UTC)
+     Alarm map index:                	0
+     Lower main alarm limit:         	nan
+     Lower pre alarm limit:          	0.000000
+     Upper pre alarm limit:          	2.800000
+     Upper main alarm limit:         	7.100000
+     Learning mode active:           	7.100000
+     Unit uuid:                      	72859531-1F7D-4133-B480-BCD964C87BE1
+     Unit string:                    	mm/s
+     Timesignal uudis:               	1
+      1.:                            	A73509AC-C52E-4072-A1A0-465150C45ABD
+     Timesignal unit uuid:           	72859531-1F7D-4133-B480-BCD964C87BE1
+     Timesignal unit name:           	mm/s
+     Timesignal signal type:         	1

@@ -25,6 +25,8 @@ The tools can convert:
 * Time signal data
 * Trend data
 * Classification data
+* Job data
+* KPI data
 
 The current code can be compiled under Linux or under Windows. Under releases, we provide pre-compiled binaries for 
 Linux and Windows. The converters are backwards-compatible. This means, that we can convert the data of the current
@@ -53,6 +55,7 @@ In the directory source, call the following command:
 This will create the following binaries:
 * classification_data_to_ascii
 * device_config_to_ascii
+* job_data_to_ascii
 * timesignal_data_to_ascii
 * trend_data_to_ascii
 
@@ -63,6 +66,8 @@ the just created tools:
 
     ./bin/classification_data_bin_to_ascii doc/example_data/classification_data.sccd classification_data.txt
     ./bin/device_config_to_ascii doc/example_data/deviceconfig.scdc deviceconfig.txt
+    ./bin/job_data_to_ascii doc/example_data/jobdata.scjd jobdata.txt
+    ./bin/job_data_to_ascii doc/example_data/kpidata.sckd kpidata.txt
     ./bin/timesignal_data_to_ascii doc/example_data/timesignal.scts timesignal.txt
     ./bin/trend_data_to_ascii doc/example_data/trend.sctd trend.txt
 
@@ -125,6 +130,8 @@ the just created tools:
 
     bin\classification_data_bin_to_ascii doc\example_data\classification_data.sccd classification_data.txt
     bin\device_config_to_ascii doc\example_data\deviceconfig.scdc deviceconfig.txt
+    bin\job_data_to_ascii doc\example_data\jobdata.scjd jobdata.txt
+    bin\job_data_to_ascii doc\example_data\kpidata.sckd kpidata.txt
     bin\timesignal_data_to_ascii doc\example_data\timesignal.scts timesignal.txt
     bin\trend_data_to_ascii doc\example_data\trend.sctd trend.txt
 

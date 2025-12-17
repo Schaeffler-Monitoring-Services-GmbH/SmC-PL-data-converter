@@ -287,7 +287,7 @@ message SubCharacteristicValueConfig {
 	bytes unit_uuid = 100;
 	string unit_name = 101;
 	repeated FrequencyBand frequency_bands = 200;
-	repeated SubCharacteristicValueConfig sub_characteristc_values = 300;
+	repeated SubCharacteristicValueConfig sub_characteristic_values = 300;
 }
 
 message CharacteristicValueConfig {
@@ -326,7 +326,7 @@ message CharacteristicValueConfig {
 	bytes unit_uuid = 200;
 	string unit_name = 201;
 	repeated FrequencyBand frequency_bands = 300;
-	repeated SubCharacteristicValueConfig sub_characteristc_values = 400;
+	repeated SubCharacteristicValueConfig sub_characteristic_values = 400;
 	
 	repeated bytes validator_characteristic_values = 500;
 	repeated bytes trigger_characteristic_values = 501;

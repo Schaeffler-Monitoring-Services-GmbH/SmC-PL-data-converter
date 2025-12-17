@@ -993,10 +993,10 @@ void printSubCharacteristicValueConfig(const smartcheck::SubCharacteristicValueC
   {
     PrintFrequencyBand(rSubCharacteristicValueConfig.frequency_bands(i), Blanks, i);
   }
-// repeated SubCharacteristicValueConfig sub_characteristc_values
-  for (int i = 0; i < rSubCharacteristicValueConfig.sub_characteristc_values_size(); ++i)
+// repeated SubCharacteristicValueConfig sub_characteristic_values
+  for (int i = 0; i < rSubCharacteristicValueConfig.sub_characteristic_values_size(); ++i)
   {
-    printSubCharacteristicValueConfig(rSubCharacteristicValueConfig.sub_characteristc_values(i), Blanks, i);
+    printSubCharacteristicValueConfig(rSubCharacteristicValueConfig.sub_characteristic_values(i), Blanks, i);
   }
 }
 
@@ -1213,12 +1213,12 @@ void PrintCharacteristicValueConfig(const smartcheck::CharacteristicValueConfig 
   {
     PrintFrequencyBand(rCharacteristicValueConfig.frequency_bands(i), Blanks, i);
   }
-// repeated SubCharacteristicValueConfig sub_characteristc_values
+// repeated SubCharacteristicValueConfig sub_characteristic_values
   fprintf(outstream, "\n%sNumber of sub characteristic values: \t%d\n", PBLANKS,
-          rCharacteristicValueConfig.sub_characteristc_values_size());
-  for (int i = 0; i < rCharacteristicValueConfig.sub_characteristc_values_size(); ++i)
+          rCharacteristicValueConfig.sub_characteristic_values_size());
+  for (int i = 0; i < rCharacteristicValueConfig.sub_characteristic_values_size(); ++i)
   {
-    printSubCharacteristicValueConfig(rCharacteristicValueConfig.sub_characteristc_values(i), Blanks, i);
+    printSubCharacteristicValueConfig(rCharacteristicValueConfig.sub_characteristic_values(i), Blanks, i);
   }
 }
 
