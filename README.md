@@ -13,7 +13,7 @@
 <!-- TOC -->
 
 This repository provides a converter tool which allows users to unpack SmartCheck and ProLink binary data. This data is
-used for example when measurement data is received via email or fetched via OPC/UA. Schaeffler provides an open-source 
+used for example when measurement data is received via email or fetched via OPC/UA or MQTT. Schaeffler provides an open-source 
 tool collection to unpack this data to readable text format free of charge.
 
 The source code in this tool converts a data container encoded in [Protobuf format](https://protobuf.dev/overview/) into an ASCII format. This is meant 
