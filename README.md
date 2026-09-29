@@ -137,3 +137,14 @@ the just created tools:
 
 The directory doc\example_data also contains these text files, so the result of the conversion. These can be used as a 
 reference to check if the converters still work correctly after changes to the source code.
+
+---
+
+**Technical support** — products, hardware and OPTIME Digital Service:
+[Schaeffler Lifetime Solutions technical support](https://medias.schaeffler.de/en/lifetime-solutions/technical-support).
+
+**Security issues** — please report privately through GitHub's private vulnerability reporting, never as a public issue.
+
+Related sites: [Schaeffler Lifetime Solutions](https://sls-cdn.schaeffler-iot.com/) ·
+[OPTIME](https://schaeffler-optime.io/) ·
+[Organization website](https://schaeffler-monitoring-services-gmbh.github.io/)
